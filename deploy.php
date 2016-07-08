@@ -1,13 +1,16 @@
 <?php 
 
 $post = $_POST;
-$command = 'echo '.json_encode($post);
+$command = 'git pull';
 
-$output = shell_exec($command);
+if ( $_POST && $_POST['payload'] ) {
+	$output = shell_exec($command);
+	echo '<pre style="display: table; font-size: 10px">';
+		var_dump($output);
+	echo '</pre>';
 
-echo '<pre style="display: table; font-size: 10px">';
-	var_dump($post);
-echo '</pre>';
+}
+
 
 ?>
 
