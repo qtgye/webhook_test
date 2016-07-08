@@ -18,6 +18,7 @@ $command = 'git pull origin 2>&1';
 	echo '<pre style="display: table; font-size: 10px">';
 		var_dump($output);
 	echo '</pre>';
+	
 
 ?>
 
