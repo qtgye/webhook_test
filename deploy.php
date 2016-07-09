@@ -4,7 +4,7 @@ $post = $_POST;
 $command = 'git pull origin 2>&1';
 
 if ( $post && $post["payload"] ) {
-	$payload = json_decode($post['payload']);
+	$payload = $post['payload'];
 
 	echo '<pre style="display: table; font-size: 10px">';
 		var_dump($payload);
