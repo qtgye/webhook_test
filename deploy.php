@@ -4,17 +4,13 @@ $post = $_POST;
 $command = 'git pull origin 2>&1';
 
 if ( $post && $post["payload"] ) {
-	$payload = $post['payload'];
+	$payload = json_decode($post['payload']);
 
-	echo '<pre style="display: table; font-size: 10px">';
-		var_dump(json_decode($payload));
-	echo '</pre>';
-
-	// if ( $payload['pusher']['email'] == 'buquia.jace@gmail.com' ) {
-	// 	$output = shell_exec($command);
-	// 	echo $output;
-	// 	return;
-	// }	
+	if ( $payload->pusher->email == 'buquia.jace@gmail.com' ) {
+		$output = shell_exec($command);
+		echo $output;
+		return;
+	}	
 }
 
 echo 'Unauthorized deployment';
